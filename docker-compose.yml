@@ -10,14 +10,14 @@ services:
       - MARIADB_PASSWORD=${MARIADB_PASSWORD}
       - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
   apache:
-    image: httpd:2.4.57
+    image: php:8.2.12RC1-apache
     depends_on:
       - db
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./data/apache/htdocs:/usr/local/apache2/htdocs
+      - ./data/php/htdocs:/var/www/html
   phpmyadmin:
     image: phpmyadmin:5.2.1
     depends_on:
