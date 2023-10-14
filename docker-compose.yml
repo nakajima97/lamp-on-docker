@@ -18,3 +18,14 @@ services:
       - 443:443
     volumes:
       - ./data/apache/htdocs:/usr/local/apache2/htdocs
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=${MARIADB_USER}
+      - PMA_PASSWORD=${MARIADB_PASSWORD}
+    ports:
+      - 3001:80
