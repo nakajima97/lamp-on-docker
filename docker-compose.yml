@@ -25,7 +25,7 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOSTS=db
-      - PMA_USER=${MARIADB_USER}
-      - PMA_PASSWORD=${MARIADB_PASSWORD}
+      - PMA_USER=root
+      - PMA_PASSWORD=${MARIADB_ROOT_PASSWORD}
     ports:
       - 3001:80
