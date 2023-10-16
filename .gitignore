@@ -1,2 +1,3 @@
 .env
-/data/
+/data/php/htdocs/*
+!/data/php/htdocs/.gitkeep
